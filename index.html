@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Black Friday Promotion Banner</title>
+
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Banner Container */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #434343);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Animated Background Elements */
+    .banner-container::before, .banner-container::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.1;
+      animation: rotate 20s linear infinite;
+    }
+
+    .banner-container::before {
+      background-image: url('https://yourwebsite.com/images/black-friday-bg1.png');
+    }
+
+    .banner-container::after {
+      background-image: url('https://yourwebsite.com/images/black-friday-bg2.png');
+      animation-direction: reverse;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    /* Headline */
+    .headline {
+      font-size: 4em;
+      margin-bottom: 0.2em;
+      color: #FFD700; /* Gold color */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Subheadline */
+    .subheadline {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Offer Details */
+    .offer-details {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+
+    .offer-details span {
+      color: #FF0000; /* Red color for emphasis */
+      font-weight: bold;
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 1.5em;
+    }
+
+    .countdown div {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .countdown div span {
+      display: block;
+      font-size: 2em;
+    }
+
+    .countdown div label {
+      display: block;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      margin-top: 5px;
+      color: #FFD700;
+    }
+
+    /* Call to Action Button */
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #FF0000;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #CC0000;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 3em;
+      }
+      .subheadline {
+        font-size: 1.8em;
+      }
+      .offer-details {
+        font-size: 1.5em;
+      }
+      .cta-button {
+        font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .headline {
+        font-size: 2.5em;
+      }
+      .subheadline {
+        font-size: 1.5em;
+      }
+      .offer-details {
+        font-size: 1.2em;
+      }
+      .cta-button {
+        font-size: 1em;
+      }
+      .countdown div span {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner-container">
+    <div class="content-wrapper">
+      <div class="headline">Black Friday Deal</div>
+      <div class="subheadline">Limited Time Offer!</div>
+      <div class="offer-details">
+        <p><span>No Joining Fee</span> and <span>No 12 Month Contract</span></p>
+        <p>This is our best deal ever!</p>
+      </div>
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div>
+          <span id="days">00</span>
+          <label>Days</label>
+        </div>
+        <div>
+          <span id="hours">00</span>
+          <label>Hours</label>
+        </div>
+        <div>
+          <span id="minutes">00</span>
+          <label>Minutes</label>
+        </div>
+        <div>
+          <span id="seconds">00</span>
+          <label>Seconds</label>
+        </div>
+      </div>
+      <!-- Call to Action Button -->
+      <a href="https://yourwebsite.com/signup" class="cta-button">Join Now</a>
+    </div>
+  </div>
+
+  <!-- JavaScript for Countdown Timer -->
+  <script>
+    // Set the date we're counting down to (December 2, 2023, at 23:59:59)
+    const countDownDate = new Date('December 2, 2023 23:59:59').getTime();
+
+    // Update the countdown every 1 second
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+
+      // If the countdown is over
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.querySelector('.countdown').innerHTML = '<div>Offer Expired</div>';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
