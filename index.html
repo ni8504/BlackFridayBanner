@@ -17,9 +17,9 @@
 
     /* Body Styling */
     body, html {
-      height: 100%;
       width: 100%;
-      overflow: hidden;
+      margin: 0;
+      padding: 0;
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -27,8 +27,7 @@
     .banner-container {
       position: relative;
       width: 100%;
-      height: 100vh;
-      background: linear-gradient(135deg, #000000, #434343);
+      min-height: 100vh;
       color: #FFFFFF;
       display: flex;
       justify-content: center;
@@ -37,36 +36,16 @@
       overflow: hidden;
     }
 
-    /* Animated Background Elements */
-    .banner-container::before, .banner-container::after {
-      content: '';
+    /* Banner Image */
+    .banner-image {
       position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 0.1;
-      animation: rotate 20s linear infinite;
-    }
-
-    .banner-container::before {
-      background-image: url('https://www.fitclub.net/sites/ob-143.app.sitewright.io/files/image/2024-09/west%20weights2%20%281%29.JPG');
-    }
-
-    .banner-container::after {
-      background-image: url('https://www.fitclub.net/sites/ob-143.app.sitewright.io/files/image/2024-09/west%20weights2%20%281%29.JPG');
-      animation-direction: reverse;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
     }
 
     /* Content Wrapper */
@@ -75,6 +54,7 @@
       z-index: 1;
       max-width: 800px;
       padding: 20px;
+      margin: 0 auto;
     }
 
     /* Headline */
@@ -111,12 +91,15 @@
       justify-content: center;
       gap: 15px;
       margin-bottom: 1.5em;
+      flex-wrap: wrap;
     }
 
     .countdown div {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 10px 15px;
       border-radius: 5px;
+      min-width: 80px;
+      margin-bottom: 10px;
     }
 
     .countdown div span {
@@ -164,6 +147,7 @@
       }
       .cta-button {
         font-size: 1.2em;
+        padding: 12px 24px;
       }
     }
 
@@ -179,6 +163,7 @@
       }
       .cta-button {
         font-size: 1em;
+        padding: 10px 20px;
       }
       .countdown div span {
         font-size: 1.5em;
@@ -188,6 +173,13 @@
 </head>
 <body>
   <div class="banner-container">
+    <!-- Background Image -->
+    <img
+      src="https://www.fitclub.net/sites/ob-143.app.sitewright.io/files/image/2024-09/west%20weights2%20%281%29.JPG"
+      alt="Black Friday Banner"
+      class="banner-image"
+    />
+
     <div class="content-wrapper">
       <div class="headline">Black Friday Deal</div>
       <div class="subheadline">Limited Time Offer!</div>
@@ -215,13 +207,13 @@
         </div>
       </div>
       <!-- Call to Action Button -->
-      <a href="https://joinnow.fitclub.net" class="cta-button">Join Now</a>
+      <a href="https://yourwebsite.com/signup" class="cta-button">Join Now</a>
     </div>
   </div>
 
   <!-- JavaScript for Countdown Timer -->
   <script>
-    // Set the date we're counting down to (December 2, 2023, at 23:59:59)
+    // Set the date we're counting down to (December 2, 2024, at 23:59:59)
     const countDownDate = new Date('December 2, 2024 23:59:59').getTime();
 
     // Update the countdown every 1 second
