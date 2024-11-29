@@ -16,18 +16,20 @@
     }
 
     /* Body Styling */
-    body, html {
+    html, body {
       width: 100%;
+      height: 100%; /* Ensure the body fills the iframe height */
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
+      overflow: hidden; /* Prevent scrollbars */
     }
 
     /* Banner Container */
     .banner-container {
       position: relative;
       width: 100%;
-      min-height: 100vh;
+      height: 100%; /* Adjust to fit the iframe height */
       color: #FFFFFF;
       display: flex;
       justify-content: center;
@@ -42,7 +44,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 100%; /* Ensure the image fills the container */
       object-fit: cover;
       object-position: center;
       z-index: 0;
@@ -57,6 +59,7 @@
       margin: 0 auto;
       background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
       border-radius: 8px; /* Optional */
+      overflow: auto; /* Allow content to scroll if necessary */
     }
 
     /* Headline */
@@ -80,7 +83,7 @@
     /* Offer Details */
     .offer-details {
       font-size: 1.8em;
-      margin-bottom: 1em;
+      margin-bottom: 1.5em; /* Increased margin-bottom to balance spacing */
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
@@ -119,26 +122,6 @@
       color: #FFD700;
     }
 
-    /* Call to Action Button */
-    .cta-button {
-      display: inline-block;
-      padding: 15px 30px;
-      background-color: #FF0000;
-      color: #FFFFFF;
-      text-transform: uppercase;
-      font-size: 1.5em;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    .cta-button:hover {
-      background-color: #CC0000;
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
       .headline {
@@ -149,10 +132,6 @@
       }
       .offer-details {
         font-size: 1.5em;
-      }
-      .cta-button {
-        font-size: 1.2em;
-        padding: 12px 24px;
       }
       .content-wrapper {
         padding: 15px;
@@ -168,10 +147,6 @@
       }
       .offer-details {
         font-size: 1.2em;
-      }
-      .cta-button {
-        font-size: 1em;
-        padding: 10px 20px;
       }
       .countdown div span {
         font-size: 1.5em;
@@ -217,8 +192,6 @@
           <label>Seconds</label>
         </div>
       </div>
-      <!-- Call to Action Button -->
-      <a href="https://yourwebsite.com/signup" class="cta-button">Join Now</a>
     </div>
   </div>
 
