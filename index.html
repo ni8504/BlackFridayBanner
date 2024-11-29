@@ -15,12 +15,13 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
-    html, body {
-      width: 100%;
-      height: 100%;
+    /* Remove body margins and set to fill the iframe */
+    body, html {
       margin: 0;
       padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; /* Prevent scrollbars */
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -28,47 +29,49 @@
     .banner-container {
       position: relative;
       width: 100%;
-      min-height: 100%;
-      color: #FFFFFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      height: 100vh; /* Set height to viewport height */
+      overflow: hidden;
     }
 
     /* Banner Image */
     .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the container */
+      object-position: center;
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%; /* Ensure the image covers the container */
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
+      z-index: 0; /* Background image at the lowest layer */
     }
 
     /* Content Wrapper */
     .content-wrapper {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 20px;
+      width: 90%;
       max-width: 800px;
-      padding: 2% 4%;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-      border-radius: 8px; /* Optional */
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      z-index: 1;
     }
 
-    /* Responsive Font Sizes */
+    /* Headline */
     .headline {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: 3.5em;
       margin-bottom: 0.5em;
       color: #FFD700; /* Gold color */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
+    /* Subheadline */
     .subheadline {
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-size: 2.5em;
       margin-bottom: 0.5em;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -76,8 +79,9 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
+    /* Offer Details */
     .offer-details {
-      font-size: clamp(1rem, 2.5vw, 1.8rem);
+      font-size: 2em;
       margin-bottom: 1em;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
@@ -91,36 +95,78 @@
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 1vw;
-      margin-bottom: 1em;
+      gap: 15px;
       flex-wrap: wrap;
+      margin-bottom: 1em;
     }
 
     .countdown div {
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 1% 2%;
+      padding: 10px 15px;
       border-radius: 5px;
-      min-width: 50px;
+      min-width: 80px;
       margin-bottom: 10px;
     }
 
     .countdown div span {
       display: block;
-      font-size: clamp(1rem, 2.5vw, 2rem);
+      font-size: 2em;
     }
 
     .countdown div label {
       display: block;
-      font-size: clamp(0.6rem, 1.5vw, 1rem);
+      font-size: 0.8em;
       text-transform: uppercase;
-      margin-top: 3px;
+      margin-top: 5px;
       color: #FFD700;
     }
 
-    /* Responsive Design */
+    /* Responsive Adjustments */
+
+    /* Tablets and Small Desktops */
+    @media (max-width: 1024px) {
+      .headline {
+        font-size: 3em;
+      }
+      .subheadline {
+        font-size: 2em;
+      }
+      .offer-details {
+        font-size: 1.8em;
+      }
+    }
+
+    /* Mobile Devices */
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 2.5em;
+      }
+      .subheadline {
+        font-size: 1.8em;
+      }
+      .offer-details {
+        font-size: 1.5em;
+      }
+      .countdown div span {
+        font-size: 1.8em;
+      }
+    }
+
     @media (max-width: 480px) {
-      .content-wrapper {
-        padding: 4% 5%;
+      .headline {
+        font-size: 2em;
+      }
+      .subheadline {
+        font-size: 1.5em;
+      }
+      .offer-details {
+        font-size: 1.2em;
+      }
+      .countdown div span {
+        font-size: 1.5em;
+      }
+      .countdown div label {
+        font-size: 0.7em;
       }
     }
   </style>
