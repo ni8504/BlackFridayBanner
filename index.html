@@ -28,7 +28,7 @@
     .banner-container {
       position: relative;
       width: 100%;
-      min-height: 100%; /* Allow the banner to expand */
+      min-height: 100%;
       color: #FFFFFF;
       display: flex;
       justify-content: center;
@@ -53,23 +53,22 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
-      padding: 20px;
+      padding: 2% 4%;
       margin: 0 auto;
       background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
       border-radius: 8px; /* Optional */
     }
 
-    /* Headline */
+    /* Responsive Font Sizes */
     .headline {
-      font-size: 3.5em; /* Reduced font size */
-      margin-bottom: 0.2em;
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 0.5em;
       color: #FFD700; /* Gold color */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    /* Subheadline */
     .subheadline {
-      font-size: 1.8em; /* Reduced font size */
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
       margin-bottom: 0.5em;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -77,9 +76,8 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
-    /* Offer Details */
     .offer-details {
-      font-size: 1.5em; /* Reduced font size */
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
       margin-bottom: 1em;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
@@ -93,80 +91,36 @@
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 1vw;
       margin-bottom: 1em;
       flex-wrap: wrap;
     }
 
     .countdown div {
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 8px 10px;
+      padding: 1% 2%;
       border-radius: 5px;
-      min-width: 60px;
+      min-width: 50px;
       margin-bottom: 10px;
     }
 
     .countdown div span {
       display: block;
-      font-size: 1.8em; /* Reduced font size */
+      font-size: clamp(1rem, 2.5vw, 2rem);
     }
 
     .countdown div label {
       display: block;
-      font-size: 0.7em;
+      font-size: clamp(0.6rem, 1.5vw, 1rem);
       text-transform: uppercase;
       margin-top: 3px;
       color: #FFD700;
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
-      .headline {
-        font-size: 2.5em;
-      }
-      .subheadline {
-        font-size: 1.5em;
-      }
-      .offer-details {
-        font-size: 1.2em;
-      }
-      .content-wrapper {
-        padding: 15px;
-      }
-      .countdown div {
-        padding: 6px 8px;
-        min-width: 50px;
-      }
-      .countdown div span {
-        font-size: 1.5em;
-      }
-    }
-
     @media (max-width: 480px) {
-      .headline {
-        font-size: 2em;
-      }
-      .subheadline {
-        font-size: 1.2em;
-      }
-      .offer-details {
-        font-size: 1em;
-      }
       .content-wrapper {
-        padding: 10px;
-      }
-      .countdown {
-        gap: 8px;
-      }
-      .countdown div {
-        padding: 5px 6px;
-        min-width: 40px;
-      }
-      .countdown div span {
-        font-size: 1.2em;
-      }
-      .countdown div label {
-        font-size: 0.6em;
+        padding: 4% 5%;
       }
     }
   </style>
