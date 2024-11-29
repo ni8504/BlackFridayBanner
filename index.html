@@ -18,24 +18,22 @@
     /* Body Styling */
     html, body {
       width: 100%;
-      height: 100%; /* Ensure the body fills the iframe height */
+      height: 100%;
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      overflow: hidden; /* Prevent scrollbars */
     }
 
     /* Banner Container */
     .banner-container {
       position: relative;
       width: 100%;
-      height: 100%; /* Adjust to fit the iframe height */
+      min-height: 100%; /* Allow the banner to expand */
       color: #FFFFFF;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
     }
 
     /* Banner Image */
@@ -44,7 +42,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; /* Ensure the image fills the container */
+      height: 100%; /* Ensure the image covers the container */
       object-fit: cover;
       object-position: center;
       z-index: 0;
@@ -59,12 +57,11 @@
       margin: 0 auto;
       background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
       border-radius: 8px; /* Optional */
-      overflow: auto; /* Allow content to scroll if necessary */
     }
 
     /* Headline */
     .headline {
-      font-size: 4em;
+      font-size: 3.5em; /* Reduced font size */
       margin-bottom: 0.2em;
       color: #FFD700; /* Gold color */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -72,7 +69,7 @@
 
     /* Subheadline */
     .subheadline {
-      font-size: 2em;
+      font-size: 1.8em; /* Reduced font size */
       margin-bottom: 0.5em;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -82,8 +79,8 @@
 
     /* Offer Details */
     .offer-details {
-      font-size: 1.8em;
-      margin-bottom: 1.5em; /* Increased margin-bottom to balance spacing */
+      font-size: 1.5em; /* Reduced font size */
+      margin-bottom: 1em;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
@@ -96,49 +93,34 @@
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 1.5em;
+      gap: 10px;
+      margin-bottom: 1em;
       flex-wrap: wrap;
     }
 
     .countdown div {
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 15px;
+      padding: 8px 10px;
       border-radius: 5px;
-      min-width: 80px;
+      min-width: 60px;
       margin-bottom: 10px;
     }
 
     .countdown div span {
       display: block;
-      font-size: 2em;
+      font-size: 1.8em; /* Reduced font size */
     }
 
     .countdown div label {
       display: block;
-      font-size: 0.8em;
+      font-size: 0.7em;
       text-transform: uppercase;
-      margin-top: 5px;
+      margin-top: 3px;
       color: #FFD700;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .headline {
-        font-size: 3em;
-      }
-      .subheadline {
-        font-size: 1.8em;
-      }
-      .offer-details {
-        font-size: 1.5em;
-      }
-      .content-wrapper {
-        padding: 15px;
-      }
-    }
-
-    @media (max-width: 480px) {
       .headline {
         font-size: 2.5em;
       }
@@ -148,11 +130,43 @@
       .offer-details {
         font-size: 1.2em;
       }
+      .content-wrapper {
+        padding: 15px;
+      }
+      .countdown div {
+        padding: 6px 8px;
+        min-width: 50px;
+      }
       .countdown div span {
         font-size: 1.5em;
       }
+    }
+
+    @media (max-width: 480px) {
+      .headline {
+        font-size: 2em;
+      }
+      .subheadline {
+        font-size: 1.2em;
+      }
+      .offer-details {
+        font-size: 1em;
+      }
       .content-wrapper {
         padding: 10px;
+      }
+      .countdown {
+        gap: 8px;
+      }
+      .countdown div {
+        padding: 5px 6px;
+        min-width: 40px;
+      }
+      .countdown div span {
+        font-size: 1.2em;
+      }
+      .countdown div label {
+        font-size: 0.6em;
       }
     }
   </style>
