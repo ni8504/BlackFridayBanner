@@ -55,6 +55,8 @@
       max-width: 800px;
       padding: 20px;
       margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+      border-radius: 8px; /* Optional */
     }
 
     /* Headline */
@@ -72,12 +74,14 @@
       color: #FFFFFF;
       text-transform: uppercase;
       letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
     /* Offer Details */
     .offer-details {
       font-size: 1.8em;
       margin-bottom: 1em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
     .offer-details span {
@@ -128,6 +132,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: background-color 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
     .cta-button:hover {
@@ -149,6 +154,9 @@
         font-size: 1.2em;
         padding: 12px 24px;
       }
+      .content-wrapper {
+        padding: 15px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -167,6 +175,9 @@
       }
       .countdown div span {
         font-size: 1.5em;
+      }
+      .content-wrapper {
+        padding: 10px;
       }
     }
   </style>
